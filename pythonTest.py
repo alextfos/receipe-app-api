@@ -1,5 +1,4 @@
 
-class Test:
-    print("test")
+a = 5
 
-Test()
+print(a)
