@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 from django.core.management import call_command
 from django.db.utils import OperationalError
-from django.est import TestCase
+from django.test import TestCase
 
 class ComandTests(TestCase):
     def test_wait_for_db_ready(self):
@@ -12,12 +12,10 @@ class ComandTests(TestCase):
             call_command('wait_for_db')
             self.assertEqual(gi.call_count, 1)
 
-    @Patch('time.sleep', return_value=True)
-    def test_wait_for_db(self):
+    @patch('time.sleep', return_value=True)
+    def test_wait_for_db(self, ts):
         """Test waiting for db"""
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
-            gi.side_efect = [OperationalError] * 5 + [True]
+            gi.side_effect = [OperationalError] * 5 + [True]
             call_command('wait_for_db')
             self.assertEqual(gi.call_count, 6)
-
-            
