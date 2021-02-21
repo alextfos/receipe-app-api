@@ -1,6 +1,6 @@
 FROM python:3.7-alpine
 
-MAINTAINER Alejandro Traver
+LABEL Alejandro Traver
 
 ENV PYTHONBUFFERED 1
 
