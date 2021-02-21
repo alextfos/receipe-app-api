@@ -1,0 +1,26 @@
+_id: req_8ccae9c4897147d188211ea2504cda96
+type: Request
+parentId: wrk_63611b4a067844e09ff0fad9f428366a
+modified: 1613932963292
+created: 1613931818824
+url: "{{baseUrl}}/admin"
+name: Register user
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: ""
+    value: ""
+    description: ""
+    id: pair_fd7d3276025c47b29acabeae3e4b8323
+    disabled: false
+headers: []
+authentication: {}
+metaSortKey: -1613931818824
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
