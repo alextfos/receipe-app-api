@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: receipe-app-api:latest
+    image: alextfos/receipe-app:latest
     build: .
     ports:
       - "8000:8000"
