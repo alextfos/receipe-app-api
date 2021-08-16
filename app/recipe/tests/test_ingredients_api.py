@@ -22,7 +22,11 @@ class PublicIngredientsApiTests(TestCase):
         """Test that login is required to access the endpoint"""
         res = self.client.get(INGREDIENTS_URL)
 
-        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertTrue(
+            res.status_code == status.HTTP_401_UNAUTHORIZED
+            or
+            res.status_code == status.HTTP_403_FORBIDDEN
+        )
 
 class PrivateIngredients(TestCase):
     """Test the private ingredients API"""
@@ -80,5 +84,4 @@ class PrivateIngredients(TestCase):
         res = self.client.post(INGREDIENTS_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
-    
     
